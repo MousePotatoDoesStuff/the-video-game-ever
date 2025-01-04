@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5ucktgfk4hkk"]
+
+[ext_resource type="PackedScene" uid="uid://dfuxljwo1xdpx" path="res://Scenes/SettingsElements/AudioSettings/audio_control.tscn" id="1_5kdkk"]
+[ext_resource type="Script" path="res://Scenes/SettingsElements/AudioSettings/audio_settings_screen.gd" id="1_100ef"]
+
+[node name="Audio Settings Screen" type="Control" node_paths=PackedStringArray("control_sliders")]
+layout_mode = 3
+anchor_right = 0.5
+anchor_bottom = 0.667
+offset_right = 600.0
+offset_bottom = 599.7
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_100ef")
+control_sliders = [NodePath("audio"), NodePath("music"), NodePath("sound")]
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="audio" parent="." instance=ExtResource("1_5kdkk")]
+custom_minimum_size = Vector2(600, 200)
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 0.333333
+offset_right = 0.0
+offset_bottom = 0.0
+scale = Vector2(1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="music" parent="." instance=ExtResource("1_5kdkk")]
+custom_minimum_size = Vector2(600, 200)
+layout_mode = 2
+anchors_preset = 0
+anchor_top = 0.333333
+anchor_right = 1.0
+anchor_bottom = 0.666667
+offset_right = 0.0
+offset_bottom = 0.0
+scale = Vector2(1, 1)
+title = "Music"
+save_as = "music"
+metadata/_edit_use_anchors_ = true
+
+[node name="sound" parent="." instance=ExtResource("1_5kdkk")]
+custom_minimum_size = Vector2(600, 200)
+layout_mode = 2
+anchors_preset = 0
+anchor_top = 0.666667
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+scale = Vector2(1, 1)
+title = "Sound"
+save_as = "sound"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="volume_changed" from="audio" to="." method="PassAudio"]
+[connection signal="volume_changed" from="music" to="." method="PassAudio"]
+[connection signal="volume_changed" from="sound" to="." method="PassAudio"]

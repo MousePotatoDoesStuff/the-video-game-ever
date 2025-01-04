@@ -1,0 +1,107 @@
+[gd_scene load_steps=4 format=3 uid="uid://bleklkldceiba"]
+
+[ext_resource type="Script" path="res://Scenes/SettingsElements/settings_choice_menu.gd" id="1_rl1km"]
+[ext_resource type="PackedScene" uid="uid://b5ucktgfk4hkk" path="res://Scenes/SettingsElements/AudioSettings/audio_settings_screen.tscn" id="1_x7r6x"]
+[ext_resource type="Script" path="res://Scenes/SettingsElements/se_si_button.gd" id="2_srjay"]
+
+[node name="Settings Window" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="SettingsChoiceMenu" type="Control" parent="." node_paths=PackedStringArray("menus")]
+layout_mode = 1
+anchor_right = 0.25
+anchor_bottom = 1.0
+grow_vertical = 2
+script = ExtResource("1_rl1km")
+menus = [NodePath("../MainMenu/Audio Settings Screen"), NodePath("../MainMenu/ColorRect")]
+metadata/_edit_use_anchors_ = true
+
+[node name="bg2" type="ColorRect" parent="SettingsChoiceMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.584314, 0.388235, 1, 1)
+
+[node name="Title" type="RichTextLabel" parent="SettingsChoiceMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.0666667
+anchor_right = 0.9
+anchor_bottom = 0.177778
+offset_bottom = -40.0
+bbcode_enabled = true
+text = "[center]Settings"
+metadata/_edit_use_anchors_ = true
+
+[node name="SettingsMenu" type="VBoxContainer" parent="SettingsChoiceMenu"]
+layout_mode = 0
+anchor_left = 0.1
+anchor_top = 0.166667
+anchor_right = 0.9
+anchor_bottom = 0.666667
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="SettingsChoiceMenu/SettingsMenu"]
+layout_mode = 2
+text = "Choose a setting..."
+script = ExtResource("2_srjay")
+
+[node name="OptionsMenu" type="VBoxContainer" parent="SettingsChoiceMenu"]
+layout_mode = 0
+anchor_left = 0.1
+anchor_top = 0.722222
+anchor_right = 0.9
+anchor_bottom = 0.888889
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="SettingsChoiceMenu/OptionsMenu"]
+layout_mode = 2
+text = "Return to menu"
+
+[node name="Button2" type="Button" parent="SettingsChoiceMenu/OptionsMenu"]
+layout_mode = 2
+text = "Exit"
+
+[node name="MainMenu" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.25
+anchor_right = 1.0
+anchor_bottom = 1.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Audio Settings Screen" parent="MainMenu" instance=ExtResource("1_x7r6x")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="ColorRect" type="ColorRect" parent="MainMenu"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.797, 0.42, 1, 1)
