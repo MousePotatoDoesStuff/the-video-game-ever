@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgv7yl0rxgwf5"]
+[gd_scene load_steps=3 format=3 uid="uid://cgv7yl0rxgwf5"]
 
 [ext_resource type="Script" path="res://Scenes/UI/menu_transition_manager.gd" id="1_7l3fe"]
+[ext_resource type="Script" path="res://Scenes/UI/animation_slider.gd" id="2_rlgst"]
 
 [node name="MenuTransitionManager" type="Control"]
 layout_mode = 3
@@ -10,3 +11,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7l3fe")
+
+[node name="AnimationSlider" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("2_rlgst")
+animation_rel_end = Vector2(-1, 0)
+
+[node name="ColorRect" type="ColorRect" parent="AnimationSlider"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://qvtessek780u"]
+
+[ext_resource type="PackedScene" uid="uid://cgv7yl0rxgwf5" path="res://Scenes/UI/menu transition manager.tscn" id="1_kboow"]
+
+[node name="UserInterfaceSandbox" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuTransitionManager" parent="." instance=ExtResource("1_kboow")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.16
+anchor_top = 0.209
+anchor_right = 0.787
+anchor_bottom = 0.729
+offset_left = -1.52588e-05
+offset_top = -0.100006
+offset_right = -0.400085
+offset_bottom = -0.100037
+debug = true
