@@ -3,13 +3,13 @@ class_name MenuTransitionManager
 
 
 @export var debug=false
-
+@export var slider_base:AnimationSlider
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	assert(slider_base is AnimationSlider)
 	if debug:
-		$AnimationSlider.loop=true
-		$AnimationSlider.show()
+		slider_base.run(Vector2.ZERO)
 	pass # Replace with function body.
 
 
@@ -17,5 +17,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func animate(object:Control):
+
+
+func animate(object:Control, ):
 	return
