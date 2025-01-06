@@ -41,7 +41,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_odyg8")
 menu_swap_buttons = [NodePath("Button")]
-next_menus = Array[int]([-3])
+next_menus = Array[int]([-17])
 
 [node name="Button" type="Button" parent="MenuInstance2"]
 layout_mode = 0

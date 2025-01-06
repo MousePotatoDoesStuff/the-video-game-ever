@@ -19,9 +19,9 @@ func _process(delta: float) -> void:
 	pass
 
 func open_menu(next_menu:int, preloaded_data:Dictionary={}, stacking_last:bool=true):
-	if next_menu==MenuInstance.NO_SWAP:
+	if next_menu==MenuInstance.SPECIAL.NO_SWAP:
 		return
-	if next_menu==MenuInstance.CLOSE:
+	if next_menu==MenuInstance.SPECIAL.CLOSE:
 		return self.close_menu(preloaded_data)
 	var raw_data:Dictionary=self.menus[self.current_menu].close()
 	raw_data.merge(preloaded_data,true)
