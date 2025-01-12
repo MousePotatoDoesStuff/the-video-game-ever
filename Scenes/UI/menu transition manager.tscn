@@ -5,6 +5,7 @@
 
 [node name="MenuTransitionManager" type="Control"]
 layout_mode = 3
+anchors_preset = 0
 offset_right = 1200.0
 offset_bottom = 900.0
 grow_horizontal = 2
